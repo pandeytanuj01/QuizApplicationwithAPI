@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b929f275-4103-44f2-9743-e6d8a309ad31" name="Default Changelist" comment="">
+    <list default="true" id="b929f275-4103-44f2-9743-e6d8a309ad31" name="Default Changelist" comment="added Score&#10;added No. of questions user wants to attempt">
+      <change afterPath="$PROJECT_DIR$/assets/background1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Quiz/META-INF/Quiz.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Quiz/QuestionBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Quiz/QuestionBank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Quiz/QuizGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Quiz/QuizGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Quiz/QuizGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Quiz/QuizGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuestionBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuestionBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuizGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuizGUI.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +43,12 @@
   </component>
   <component name="ProjectId" id="1UfA0gU90EyvZe0cmVGfdGwYlKA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -53,18 +66,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ttanu\IdeaProjects\Quiz\assets" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.QuizGUI">
     <configuration name="QuestionBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -88,6 +95,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -101,7 +120,10 @@
       <workItem from="1575737060767" duration="18552000" />
       <workItem from="1575782292825" duration="18436000" />
       <workItem from="1575805883755" duration="22609000" />
-      <workItem from="1575840956345" duration="258000" />
+      <workItem from="1575840956345" duration="625000" />
+      <workItem from="1575871813111" duration="4959000" />
+      <workItem from="1575900080484" duration="126000" />
+      <workItem from="1575900247489" duration="6105000" />
     </task>
     <servers />
   </component>
@@ -113,10 +135,70 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575900196589">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.834@0.0.1536.834" timestamp="1575900196589" />
+    <state x="482" y="0" key="CommitChangelistDialog2" timestamp="1575913409376">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="482" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1575913409376" />
+    <state width="1493" height="272" key="GridCell.Tab.0.bottom" timestamp="1575913427520">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="272" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1575913427520" />
+    <state width="1493" height="272" key="GridCell.Tab.0.center" timestamp="1575913427519">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="272" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1575913427519" />
+    <state width="1493" height="272" key="GridCell.Tab.0.left" timestamp="1575913427519">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="272" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1575913427519" />
+    <state width="1493" height="272" key="GridCell.Tab.0.right" timestamp="1575913427519">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="272" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1575913427519" />
+    <state width="1493" height="379" key="GridCell.Tab.1.bottom" timestamp="1575911760238">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="379" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1575911760238" />
+    <state width="1493" height="379" key="GridCell.Tab.1.center" timestamp="1575911760238">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="379" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1575911760238" />
+    <state width="1493" height="379" key="GridCell.Tab.1.left" timestamp="1575911760238">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="379" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1575911760238" />
+    <state width="1493" height="379" key="GridCell.Tab.1.right" timestamp="1575911760238">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="379" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1575911760238" />
+    <state x="277" y="59" key="SettingsEditor" timestamp="1575900373821">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1575900373821" />
+    <state x="477" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1575900304127">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="477" y="244" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1575900304127" />
+    <state x="328" y="71" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1575902044503">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="328" y="71" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.834@0.0.1536.834" timestamp="1575902044503" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1575911479260">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1575911479260" />
   </component>
 </project>

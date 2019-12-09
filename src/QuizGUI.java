@@ -8,14 +8,15 @@ import java.io.IOException;
 
 public class QuizGUI extends JFrame implements ActionListener {
     private int score = 0;
-    private JButton start, exit, nextButton;
-    private Image img = Toolkit.getDefaultToolkit().getImage("D:\\Java\\background1.jpg");
-    private int ques = 24;
+    private JButton start, exit, nextButton, back;
+    private Image img = Toolkit.getDefaultToolkit().getImage("assets\\background1.jpg");
+    private int ques = 0;
     private Question[] questions;
     private JLabel questionLabel;
     private JLabel questionNumber;
     private JRadioButton[] jRadioButtons;
     private ButtonGroup buttonGroup;
+    QuestionBank questionBank;
 
     private QuizGUI() {
         this.setContentPane(new JPanel() {
@@ -79,47 +80,82 @@ public class QuizGUI extends JFrame implements ActionListener {
             this.dispose();
             System.exit(0);
         } else if (actionEvent.getSource() == start) {
-            this.getContentPane().removeAll();
+            int result = Integer.parseInt((String) JOptionPane.showInputDialog(
+                    this,
+                    "Select No. of questions you want",
+                    "No. of Questions",
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    null,
+                    5
+            ));
             try {
-                questionsGUI();
+                questionBank = new QuestionBank("https://opentdb.com/api.php?amount=" + result +"&category=18");
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            this.getContentPane().removeAll();
+            questionsGUI();
             this.update(this.getGraphics());
         } else if (actionEvent.getSource() == nextButton) {
-            if (ques < questions.length - 1 && buttonGroup.getSelection() != null) {
-                this.getContentPane().removeAll();
-                check();
-                ques += 1;
-                System.out.println(score);
-                buildUI(questions, questionNumber, questionLabel, jRadioButtons);
-                this.update(this.getGraphics());
-            } else if (buttonGroup.getSelection() == null) {
+            if (buttonGroup.getSelection() == null) {
                 JOptionPane.showMessageDialog(this, "Please Select an option to continue!!!", "Alert", JOptionPane.WARNING_MESSAGE);
             } else {
-                this.getContentPane().removeAll();
-                resultGUI();
+                if (ques < questions.length - 1 && buttonGroup.getSelection() != null) {
+                    check(ques);
+                    this.getContentPane().removeAll();
+                    ques += 1;
+                    System.out.println(score);
+                    buildUI(questions, questionNumber, questionLabel, jRadioButtons);
+                } else {
+                    check(ques);
+                    this.getContentPane().removeAll();
+                    resultGUI();
+                }
                 this.update(this.getGraphics());
             }
+        } else if (actionEvent.getSource() == back) {
+            this.getContentPane().removeAll();
+            startMenu();
+            this.update(this.getGraphics());
         }
     }
 
-    private void check() {
-        for (int i = 0; i <= ques; i++) {
-            String correct = questions[i].getCorrectAnswer();
-            if (buttonGroup.getSelection().getActionCommand().equals(correct))
-                score += 5;
-        }
+    private void check(int quesNum) {
+        String correct = questions[quesNum].getCorrectAnswer();
+        if (buttonGroup.getSelection().getActionCommand().equals(correct))
+            score += 5;
     }
 
     private void resultGUI() {
+        back = new JButton("BACK TO MENU");
+        Hover(back);
+        back.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        back.setBackground(Color.WHITE);
+        back.setSize(150, 50);
+        back.setLocation((this.getWidth() - back.getWidth()) / 2, 450);
         JLabel scoreLabel = new JLabel("Your Score : " + score);
-        scoreLabel.setSize(100, 25);
-        scoreLabel.setLocation((this.getHeight() - scoreLabel.getHeight()) / 2, (this.getWidth() - scoreLabel.getWidth()) / 2);
+        JLabel co = new JLabel("Correct: " + score / 5);
+        JLabel inco = new JLabel("Incorrect: " + (questions.length - (score / 5)));
+        scoreLabel.setSize(400, 50);
+        scoreLabel.setForeground(Color.BLACK);
+        scoreLabel.setLocation((this.getWidth() - scoreLabel.getWidth()) / 2, 150);
+        scoreLabel.setFont(new Font("Helvetica", Font.BOLD, 45));
+        co.setSize(350, 50);
+        co.setForeground(Color.BLACK);
+        co.setLocation((this.getWidth() - scoreLabel.getWidth()) / 2, 250);
+        co.setFont(new Font("Helvetica", Font.BOLD, 25));
+        inco.setSize(350, 50);
+        inco.setForeground(Color.BLACK);
+        inco.setLocation((this.getWidth() - scoreLabel.getWidth()) / 2, 350);
+        inco.setFont(new Font("Helvetica", Font.BOLD, 25));
+        add(scoreLabel);
+        add(inco);
+        add(co);
+        add(back);
     }
 
-    private void questionsGUI() throws IOException {
-        QuestionBank questionBank = new QuestionBank();
+    private void questionsGUI() {
         questions = questionBank.getData();
         questionLabel = new JLabel();
         questionNumber = new JLabel();
@@ -135,7 +171,6 @@ public class QuizGUI extends JFrame implements ActionListener {
         questionLabel.setBounds(10, 70, 590, 65);
         questionLabel.setFont(new Font("Helvetica", Font.BOLD, 20));
         questionLabel.setForeground(Color.BLACK);
-
         buildUI(questions, questionNumber, questionLabel, jRadioButtons);
     }
 
@@ -157,7 +192,7 @@ public class QuizGUI extends JFrame implements ActionListener {
             jRadioButtons[j].setFont(new Font("Helvetica", Font.BOLD, 20));
             jRadioButtons[j].setForeground(Color.BLACK);
             jRadioButtons[j].setOpaque(false);
-            jRadioButtons[j].setBounds(30, 100 + n, 300, 50);
+            jRadioButtons[j].setBounds(30, 100 + n, 550, 50);
             jRadioButtons[j].setActionCommand(StringEscapeUtils.unescapeHtml4(display.getAnswers()[j]));
             jRadioButtons[j].setText(StringEscapeUtils.unescapeHtml4(display.getAnswers()[j]));
             System.out.println(ques + " : " + display.getAnswers()[j]);

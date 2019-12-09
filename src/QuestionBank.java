@@ -9,12 +9,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 class QuestionBank {
-    private String url = "https://opentdb.com/api.php?amount=25&category=18";
-    private String questionJSON = IOUtils.toString(new URL(url), StandardCharsets.UTF_8);
-    private JSONObject jsonObject = new JSONObject(questionJSON);
-    private JSONArray questionArray = (JSONArray) jsonObject.get("results");
+    public String url ;
+    private String questionJSON ;
+    private JSONObject jsonObject ;
+    private JSONArray questionArray;
 
-    QuestionBank() throws IOException {
+    QuestionBank(String url) throws IOException {
+        questionJSON = IOUtils.toString(new URL(url), StandardCharsets.UTF_8);
+        jsonObject = new JSONObject(questionJSON);
+        questionArray = (JSONArray) jsonObject.get("results");
     }
 
     Question[] getData() {
